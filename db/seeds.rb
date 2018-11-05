@@ -12,12 +12,15 @@ User.create!( first_name: "bob",
 
 Todo.create!( description: "send email to clients",
     	      alloted_time_in_hours: 2,
+    	      user: User.find(rand(User.count)+1),
     		  dependencies: "get email address list")
 
 Todo.create!( description: "other stuff",
     	      alloted_time_in_hours: 30,
+    	      user: User.find(rand(User.count)+1),
     		  dependencies: "some other things")
 
 Todo.create!( description: "to do description",
     	      alloted_time_in_hours: 1,
+    	      user: User.find(rand(User.count)+1),
     		  dependencies: "required steps")
