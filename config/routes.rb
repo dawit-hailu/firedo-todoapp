@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   resources :sessions
 
-  get 'welcome/index'
-
   resources :users do
     resources :todos
   end
@@ -18,6 +16,8 @@ Rails.application.routes.draw do
   post  '/login' => 'sessions#create'
 
   get '/logout', to: 'sessions#destroy'
+
+  get '/', to: 'welcome#index'
 
   root 'welcome#index'
 end
